@@ -261,7 +261,7 @@ namespace CredentialManagerHelper
 
         private void checkedListBoxCredentailDetail_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxDetailInfo.Text = checkedListBoxCredentailDetail.SelectedItem.ToString();
+            textBoxDetailInfo.Text = checkedListBoxCredentailDetail.SelectedItem?.ToString();
         }
 
         private void checkedListBoxCredentailType_ItemCheck(object sender, ItemCheckEventArgs e)
