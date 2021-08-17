@@ -184,6 +184,23 @@ namespace CredentialManagerHelper
                                 }
                             }
                         }
+
+                        int imported = 0;
+                        int skipped = 0;
+                        foreach (var credential in loadedCredentials)
+                        {
+                            if (CredentialManager.ReadCredential(credential.ApplicationName) == null)
+                            {
+                                CredentialManager.WriteCredential(credential.ApplicationName, credential.UserName, credential.Password);
+                                imported++;
+                            }
+                            else
+                            {
+                                skipped++;
+                            }
+                        }
+
+                        MessageBox.Show($@"Imported {imported} new record(s), skipped {skipped} record(s) that already exist", "Success");
                     }
                     catch (InvalidPasswordException ex)
                     {
@@ -194,23 +211,6 @@ namespace CredentialManagerHelper
                         MessageBox.Show($@"Unhandled exception{Environment.NewLine}{ex}", "Error");
                     }
                 }
-
-                int imported = 0;
-                int skipped = 0;
-                foreach (var credential in loadedCredentials)
-                {
-                    if (CredentialManager.ReadCredential(credential.ApplicationName) == null)
-                    {
-                        CredentialManager.WriteCredential(credential.ApplicationName, credential.UserName, credential.Password);
-                        imported++;
-                    }
-                    else
-                    {
-                        skipped++;
-                    }
-                }
-
-                MessageBox.Show($@"Imported {imported} new record(s), skipped {skipped} record(s) that already exist", "Success");
             }
         }
 
