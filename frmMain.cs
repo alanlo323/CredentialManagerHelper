@@ -283,6 +283,7 @@ namespace CredentialManagerHelper
 
         private void DisplayCredentialList()
         {
+            credentialTypeList.Clear();
             foreach (var credential in CredentialManager.EnumerateCrendentials())
             {
                 if (!credentialTypeList.ContainsKey(credential.CredentialType))
