@@ -201,7 +201,7 @@ namespace CredentialManagerHelper
                 {
                     if (CredentialManager.ReadCredential(credential.ApplicationName) == null)
                     {
-                        //CredentialManager.WriteCredential(credential.ApplicationName, credential.UserName, credential.Password);
+                        CredentialManager.WriteCredential(credential.ApplicationName, credential.UserName, credential.Password);
                         imported++;
                     }
                     else
