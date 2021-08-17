@@ -41,6 +41,7 @@ namespace CredentialManagerHelper
             {
                 Filter = "Excel File|*.xlsx",
                 Title = "Export to File",
+                FileName = "CredentialManagerData",
                 OverwritePrompt = false,
             };
             DialogResult dialogResult = sfd.ShowDialog();
