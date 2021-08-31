@@ -39,6 +39,7 @@ namespace CredentialManagerHelper
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.progressBarInfo = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // checkedListBoxCredentailType
@@ -128,11 +129,19 @@ namespace CredentialManagerHelper
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // progressBarInfo
+            // 
+            this.progressBarInfo.Location = new System.Drawing.Point(12, 266);
+            this.progressBarInfo.Name = "progressBarInfo";
+            this.progressBarInfo.Size = new System.Drawing.Size(876, 23);
+            this.progressBarInfo.TabIndex = 12;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 265);
+            this.ClientSize = new System.Drawing.Size(900, 296);
+            this.Controls.Add(this.progressBarInfo);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPassword);
@@ -164,6 +173,7 @@ namespace CredentialManagerHelper
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ProgressBar progressBarInfo;
     }
 }
 
